@@ -1,15 +1,173 @@
+$light-red: hsl(356, 100%, 66%);
+$very-light-red: hsl(355, 100%, 74%);
+$very-dark-blue: hsl(208, 49%, 24%);
+$white: hsl(0, 0%, 100%);
+$grayish-blue: hsl(240, 2%, 79%);
+$very-dark-grayish-blue: hsl(207, 13%, 34%);
+$very-dark-black-blue: hsl(240, 10%, 16%);
+$blackborder: 1px solid black;
+
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
 }
 
 a {
     text-decoration: none;
     text-transform: capitalize;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
 }
 
 .full-img {
     width: 100%;
     height: 100%;
+}
+
+.full-page {
+    width: 100%;
+    height: 100vh;
+
+    .header {
+        width: 100%;
+        height: 500px;
+        background: url('./../images/bg-pattern-intro.svg'), $light-red;
+        background-size: 180% 490%;
+        background-position: 30% 52%;
+        border-bottom-left-radius: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        a{
+            display: inline-block;
+        }
+
+        .border-link {
+            width: 120px;
+            padding: 10px 0;
+            border-radius: 20px;
+        }
+
+        .highlighted {
+            background-color: $white;
+            margin-left: 10px;
+            color: $light-red;
+            // border: 1px solid transparent;
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.5);
+                color: white;
+            }
+        }
+
+        .navbar {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .nav-sec {
+                display: flex;
+                margin: 0 5%;
+                justify-content: space-between;
+                align-items: center;
+
+                .main-logo {
+                    color: $white;
+                    font-size: 35px;
+                }
+
+                .navlink {
+                    color: $white;
+                }
+
+                .navlist {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .navlink {
+                        width: 110px;
+                        padding: 10px 0;
+                        margin-left: 5px;
+                    }
+                }
+
+            }
+        }
+
+        .page-intro {
+            margin-top: 100px;
+            color: $white;
+            text-align: center;
+            .page-intro-title {
+                font-size: 48px;
+                margin-bottom: 20px;
+            }
+
+            .page-intro-txt {
+                font-size: 14px;
+                margin-bottom: 35px;
+            }
+
+            .page-intro-links {
+                margin-left: 5px;
+
+                &:nth-of-type(2) {
+                    color: $white;
+                    border: 1px solid white;
+                    &:hover {
+                        background-color: $white;
+                        color: $light-red;
+                    }
+                }
+            }
+        }
+    }
+
+    .future-section {
+        width: 100%;
+        margin-top: 80px;
+        padding-top: 10px;
+        overflow: hidden;
+        .future-title {
+            text-align: center;
+            color: $very-dark-blue;
+            font-size: 30px;
+            margin-top: 80px;
+            margin-bottom: -125px;
+        }
+
+        .future-sec-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .future-sec-txt-container {
+                width: 45%;
+                margin-left: 5%;
+                .future-sec-title {
+                    color: $very-dark-blue;
+                    margin-bottom: 20px;
+                }
+
+                .future-sec-txt {
+                    margin-bottom: 60px;
+                    color: $very-dark-black-blue;
+                    font-size: 14px;
+                }
+            }
+
+            .future-sec-img-container {
+                position: relative;
+                right: -15%;
+            }
+        }
+    }
 }
