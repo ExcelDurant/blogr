@@ -6,6 +6,7 @@
 }
 
 a {
+  display: inline-block;
   text-decoration: none;
   text-transform: capitalize;
   text-align: center;
@@ -31,12 +32,10 @@ ul {
   background-size: 180% 490%;
   background-position: 30% 52%;
   border-bottom-left-radius: 90px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.full-page .header a {
-  display: inline-block;
 }
 .full-page .header .border-link {
   width: 120px;
@@ -67,7 +66,8 @@ ul {
 }
 .full-page .header .navbar .nav-sec .main-logo {
   color: white;
-  font-size: 35px;
+  font-size: 38px;
+  margin-right: 2%;
 }
 .full-page .header .navbar .nav-sec .navlink {
   color: white;
@@ -81,6 +81,15 @@ ul {
   width: 110px;
   padding: 10px 0;
   margin-left: 5px;
+  position: relative;
+}
+.full-page .header .navbar .nav-sec .navlist .navlink::after {
+  position: absolute;
+  box-sizing: border-box;
+  display: inline-block;
+  content: url("./../images/icon-arrow-light.svg");
+  margin-left: 5px;
+  top: 20%;
 }
 .full-page .header .page-intro {
   margin-top: 100px;
@@ -108,16 +117,15 @@ ul {
 }
 .full-page .future-section {
   width: 100%;
-  margin-top: 80px;
-  padding-top: 10px;
+  padding-top: 100px;
+  margin-bottom: 30px;
   overflow: hidden;
 }
 .full-page .future-section .future-title {
   text-align: center;
   color: #1f3f5b;
-  font-size: 30px;
-  margin-top: 80px;
-  margin-bottom: -125px;
+  font-size: 33px;
+  margin-bottom: -100px;
 }
 .full-page .future-section .future-sec-container {
   display: flex;
@@ -130,14 +138,99 @@ ul {
 }
 .full-page .future-section .future-sec-container .future-sec-txt-container .future-sec-title {
   color: #1f3f5b;
+  font-size: 25px;
   margin-bottom: 20px;
 }
 .full-page .future-section .future-sec-container .future-sec-txt-container .future-sec-txt {
   margin-bottom: 60px;
-  color: #25252d;
+  color: #4b5862;
   font-size: 14px;
 }
 .full-page .future-section .future-sec-container .future-sec-img-container {
   position: relative;
   right: -15%;
+}
+.full-page .state-section {
+  width: 100%;
+  height: 300px;
+  background: #3f4164;
+  background-image: url("./../images/bg-pattern-circles.svg");
+  /* fallback */
+  background-image: url("./../images/bg-pattern-circles.svg"), linear-gradient(#2c2d3f, #3f4164);
+  background-repeat: no-repeat;
+  background-position: -60% 80%;
+  border-bottom-left-radius: 90px;
+  border-top-right-radius: 90px;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.full-page .state-section .phone-img-container {
+  height: 140%;
+  width: 30%;
+  position: relative;
+  top: 5%;
+  margin-left: 3%;
+}
+.full-page .state-section .state-txt-container {
+  max-width: 500px;
+  margin-right: 5%;
+  color: white;
+}
+.full-page .state-section .state-txt-container .state-title {
+  font-size: 33px;
+  margin-bottom: 20px;
+}
+.full-page .state-section .state-txt-container .state-txt {
+  font-size: 14px;
+  color: #cccbcb;
+}
+.full-page .laptop-section {
+  width: 100%;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.full-page .laptop-section .laptop-img-container {
+  position: relative;
+  left: -22%;
+}
+.full-page .laptop-section .laptop-txt-container {
+  max-width: 500px;
+  margin-left: -20%;
+}
+.full-page .laptop-section .laptop-txt-container .laptop-sec-title {
+  color: #1f3f5b;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.full-page .laptop-section .laptop-txt-container .laptop-sec-txt {
+  margin-bottom: 60px;
+  font-size: 14px;
+  color: #4b5862;
+}
+.full-page .footer-section {
+  width: 100%;
+  background-color: #25252d;
+  border-top-right-radius: 90px;
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.full-page .footer-section .footer-column .footer-logo {
+  font-size: 35px;
+  color: white;
+  margin-top: -10px;
+}
+.full-page .footer-section .footer-column .footer-column-head-link {
+  color: white;
+  margin-bottom: 30px;
+}
+.full-page .footer-section .footer-column .footer-navlink {
+  margin-bottom: 7px;
+  font-size: 13px;
+  color: #cccbcb;
 }/*# sourceMappingURL=style.css.map */
