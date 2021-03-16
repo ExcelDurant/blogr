@@ -23,7 +23,14 @@
           <ul class="navlist">
             <li><a href="#" class="navlink">product</a></li>
             <li><a href="#" class="navlink">company</a></li>
-            <li><a href="#" class="navlink">connect</a></li>
+            <li><div class="laptop-dropdown">
+              <a href="#" onclick="laptopDrop()" class="navlink" id="laptop-drop-btn">connect</a>
+              <div class="dropdown-container">
+                <a href="#" class="dropdown-link">contact</a>
+                <a href="#" class="dropdown-link">newsletter</a>
+                <a href="#" class="dropdown-link">linkedln</a>
+            </div>
+            </div></li>
           </ul>
         </div>
         <div class="nav-sec">
@@ -31,6 +38,39 @@
           <a href="#" class="border-link header-link highlighted">sign up</a>
         </div>
       </nav>
+
+      <!--                                 MOBILE NAVBAR                             -->
+      <nav class="mobile-nav">
+        <h1 class="main-logo logo">Blogr</h1>
+        <div onclick="showMenu()" class="hamburger-menu">
+          <div class="hamburger-lines line1"></div>
+          <div class="hamburger-lines line2"></div>
+          <div class="hamburger-lines line3"></div>
+        </div>
+      </nav>
+      <!--                                END OF MOBILE NAVBAR                             -->
+
+
+      <!--                             MOBILE DROPDOWN                                   -->
+      <div class="mobile-navlinks-sec">
+        <ul class="navlist">
+          <li><a href="#" class="navlink">product</a></li>
+          <li><a href="#" class="navlink">company</a></li>
+          <li><div class="dropdown">
+            <a href="#" onclick="dropdown()" class="navlink" id="mobile-drop-btn">connect</a>
+            <div class="dropdown-links">
+                <a href="#" class="dropdown-link">contact</a>
+                <a href="#" class="dropdown-link">newsletter</a>
+                <a href="#" class="dropdown-link">linkedln</a>
+            </div>
+          </div></li>
+        </ul>
+        <a href="#" class="navlink">login</a>
+        <a href="#" class="border-link header-link highlighted">sign up</a>
+      </div>
+      <!--                             END OF MOBILE DROPDOWN                                   -->
+
+
       <div class="page-intro">
         <h2 class="page-intro-title">A modern publishing platform</h2>
         <p class="page-intro-txt">Grow your audience and build your online brand</p>
@@ -65,7 +105,8 @@
           </p>
         </div>
         <div class="future-sec-img-container">
-          <img src="./assets/images/illustration-editor-desktop.svg" alt="" class="full-img">
+          <img src="./assets/images/illustration-editor-desktop.svg" alt="" class="full-img desktop-img">
+          <img src="./assets/images/illustration-editor-mobile.svg" alt="" class="full-img mobile-img">
         </div>
       </div>
     </section>
@@ -146,6 +187,7 @@
     <!--                                END FOOTER SECTION                                        -->
   </div>
 
+  <script src="./assets/script/script.js"></script>
 
 </body>
 

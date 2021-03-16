@@ -15,6 +15,7 @@ $blackborder: 1px solid black;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Overpass', sans-serif;
+    outline: none;
 }
 
 a {
@@ -40,6 +41,7 @@ ul {
     .header {
         width: 100%;
         height: 500px;
+        position: relative;
         background: url('./../images/bg-pattern-intro.svg'), $light-red;
         background-size: 180% 490%;
         background-position: 30% 52%;
@@ -59,13 +61,18 @@ ul {
             background-color: $white;
             margin-left: 10px;
             color: $light-red;
-            // border: 1px solid transparent;
             &:hover {
                 background-color: rgba(255, 255, 255, 0.5);
                 color: white;
             }
         }
 
+
+        /* 
+        *************************************
+        LAPTOP NAV
+        **************************************
+        */
         .navbar {
             width: 100%;
             height: 80px;
@@ -87,6 +94,9 @@ ul {
 
                 .navlink {
                     color: $white;
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
 
                 .navlist {
@@ -99,6 +109,7 @@ ul {
                         margin-left: 5px;
                         position: relative;
 
+                        // ADDING ARROW DOWN
                         &::after {
                             position: absolute;
                             box-sizing: border-box;
@@ -108,10 +119,174 @@ ul {
                             top: 20%;
                         }
                     }
+                    .laptop-dropdown {
+                        position: relative;
+                        text-align: left;
+                        .dropdown-container {
+                            display: none;
+                            position: absolute;
+                            background-color: white;
+                            width: 150px;
+                            padding: 10px 0;
+                            border-radius: 10px;
+                            .dropdown-link {
+                                padding: 5px 20px;
+                                color: rgb(66, 66, 66);
+                                &:hover {
+                                    color: black;
+                                }
+                            }
+                        }
+
+                        /*      JAVASCRIPT PURPOSES     */
+                        .show {
+                            display: block;
+                        }
+                    }
+
+                    /*      JAVASCRIPT PURPOSES     */
+                    .rotate-arrow {
+                        &::after {
+                            transform: rotate(180deg);
+                        }
+                    }
                 }
 
             }
         }
+
+
+
+        /* 
+        *************************************
+        MOBILE NAV
+        **************************************
+        */
+        .mobile-nav {
+            width: 100%;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            .main-logo {
+                color: $white;
+                font-size: 38px;
+                margin-left: 5%;
+            }
+            .hamburger-menu {
+                display: inline-block;
+                width: 30px;
+                height: 80%;
+                margin-right: 5%;
+                cursor: pointer;
+                .hamburger-lines {
+                    width: 100%;
+                    height: 10%;
+                    margin-top: 20%;
+                    background-color: cornsilk;
+                }
+            }
+
+            /*      JAVASCRIPT PURPOSES     */
+            /* 
+            *************************************
+             ANIMATE THE HAMBURGER MENU
+             **************************************
+            */
+            .cross {
+                .line1 {
+                    transform: rotate(-45deg) translate(-9px, 6px);
+                }
+                .line2 {
+                    opacity: 0;
+                }
+                .line3 {
+                    transform: rotate(45deg) translate(-9px, -6px);
+                }
+            }
+        }
+
+
+        /* 
+        *************************************
+        MOBILE DROPDOWN
+        **************************************
+        */
+        .mobile-navlinks-sec {
+            width: 90%;
+            position: absolute;
+            top: 20%;
+            margin: 0 auto;
+            background-color: white;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            .navlink{
+                color: $very-dark-blue;
+                padding: 10px 0;
+            }
+            .navlist{
+                width: 100%;
+                .navlink {
+                    position: relative;
+
+                        // ADDING ARROW DOWN
+                        &::after {
+                            position: absolute;
+                            box-sizing: border-box;
+                            display: inline-block;
+                            content: url('./../images/icon-arrow-dark.svg');
+                            margin-left: 5px;
+                        }
+                }
+
+                /*      JAVASCRIPT PURPOSES     */
+                .rotate-arrow {
+                    &::after {
+                        transform: rotate(180deg);
+                    }
+                }
+
+
+                .dropdown {
+                    width: 100%;
+                    margin-bottom: 40px;
+                    .dropdown-links {
+                        display: none;
+                        width: 90%;
+                        background-color: rgb(238, 238, 238);
+                        margin: 0 auto;
+                        padding: 15px 0;
+                        .dropdown-link {
+                            display: block;
+                            color: $very-dark-grayish-blue;
+                            margin-bottom: 15px;
+                        }
+                    }
+
+                    /*      JAVASCRIPT PURPOSES     */
+                    .show {
+                        display: block;
+                    }
+
+                    
+                }
+            }
+            .header-link {
+                color: $white;
+                background-color: $light-red;
+                margin-bottom: 15px;
+            }
+        }
+
+
+        /*      JAVASCRIPT PURPOSES     */
+        .show-flex {
+            display: flex;
+        }
+
 
         .page-intro {
             margin-top: 100px;
@@ -140,8 +315,37 @@ ul {
                 }
             }
         }
+
+        /* 
+        *************************************
+        RESPONSIVENESS
+        **************************************
+        */
+        @media screen and (max-width: 900px){
+            .navbar {
+                display: none;
+            }
+            .mobile-nav {
+                display: flex;
+            }
+            .page-intro {
+                width: 90%;
+                margin: 0 auto;
+                margin-top: 70px;
+                .page-intro-title {
+                    font-size: 35px;
+                }
+            }
+        }
     }
 
+
+
+    /* 
+    *************************************
+        FUTURE SECTION
+    **************************************
+    */
     .future-section {
         width: 100%;
         padding-top: 100px;
@@ -151,7 +355,7 @@ ul {
             text-align: center;
             color: $very-dark-blue;
             font-size: 33px;
-            margin-bottom: -100px;
+            margin-bottom: -5%;
         }
 
         .future-sec-container {
@@ -177,10 +381,46 @@ ul {
             .future-sec-img-container {
                 position: relative;
                 right: -15%;
+                .mobile-img {
+                    display: none;
+                }
+            }
+        }
+
+        /* 
+        *************************************
+        RESPONSIVENESS
+        **************************************
+        */
+        @media screen and (max-width: 1000px) {
+            .future-title {
+                margin-bottom: 20px;
+            }
+            .future-sec-container {
+            flex-direction: column-reverse;
+            .future-sec-txt-container {
+                width: 90%;
+                text-align: center;
+            }
+            .future-sec-img-container {
+                right: 0%;
+                .desktop-img {
+                    display: none;
+                }
+                .mobile-img {
+                    display: block;
+                }
+            }
             }
         }
     }
 
+
+    /* 
+    *************************************
+        STATE SECTION
+    **************************************
+    */
     .state-section {
         width: 100%;
         height: 300px;
@@ -195,6 +435,7 @@ ul {
         display: flex;
         justify-content: space-around;
         align-items: center;
+        
         .phone-img-container {
             height: 140%;
             width: 30%;
@@ -204,7 +445,7 @@ ul {
         }
 
         .state-txt-container {
-            max-width: 500px;
+            width: 500px;
             margin-right: 5%;
             color: $white;
             .state-title {
@@ -217,23 +458,54 @@ ul {
                 color: rgb(204, 203, 203);
             }
         }
+
+        /* 
+        *************************************
+        RESPONSIVENESS
+        **************************************
+        */
+        @media screen and (max-width: 700px) {
+            background-position: 50% -200%;
+            background-size: 120% 90%;
+            min-height: 600px;
+            margin-top: 150px;
+            flex-direction: column;
+            .phone-img-container {
+                height: 80%;
+                width: 95%;
+                top: -40%;
+                margin: auto;
+            }
+            .state-txt-container {
+                width: 90%;
+                margin: auto;
+                margin-top: -60%;
+                text-align: center;
+            }
+        }
     }
 
+
+    /* 
+    *************************************
+        LAPTOP SECTION
+    **************************************
+    */
     .laptop-section {
         width: 100%;
         margin-bottom: 60px;
-        display: flex;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        justify-content: start;
         align-items: center;
-
         .laptop-img-container {
             position: relative;
             left: -22%;
         }
 
         .laptop-txt-container {
-            max-width: 500px;
-            margin-left: -20%;
+            width: 90%;
+            margin-left: -30%;
             .laptop-sec-title {
                 color: $very-dark-blue;
                 font-size: 30px;
@@ -246,8 +518,31 @@ ul {
                 color: $very-dark-grayish-blue;
             }
         }
+
+        /* 
+        *************************************
+        RESPONSIVENESS
+        **************************************
+        */
+        @media screen and (max-width: 1000px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            .laptop-img-container {
+                left: 0;
+            }
+            .laptop-txt-container {
+                margin: auto;
+                text-align: center;
+            }
+        }
     }
 
+
+    /* 
+    *************************************
+        FOOTER SECTION
+    **************************************
+    */
     .footer-section {
         width: 100%;
         background-color: $very-dark-black-blue;
@@ -256,7 +551,16 @@ ul {
         display: flex;
         justify-content: space-evenly;
         align-items: flex-start;
+        flex-wrap: wrap;
         .footer-column {
+            margin: 60px 0;
+            width: 250px;
+
+            // RESPONSIVENESS
+            @media screen and (max-width: 600px) {
+                text-align: center;
+            }
+            
             .footer-logo {
                 font-size: 35px;
                 color: $white;
