@@ -185,7 +185,7 @@ ul {
 .full-page .header .mobile-nav .hamburger-menu {
   display: inline-block;
   width: 30px;
-  height: 80%;
+  height: 40px;
   margin-right: 5%;
   cursor: pointer;
 }
